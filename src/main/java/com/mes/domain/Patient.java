@@ -13,7 +13,7 @@ import java.util.List;
 public class Patient {
     @Id
     @GeneratedValue
-    private int id;
+    private Long id;
     private String name;
     private int age;
     private boolean travelHistory;
