@@ -1,15 +1,12 @@
 package com.mes.config;
 
 import org.neo4j.ogm.config.Configuration.Builder;
-import org.neo4j.ogm.drivers.embedded.driver.EmbeddedDriver;
 import org.neo4j.ogm.session.SessionFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.neo4j.repository.config.EnableNeo4jRepositories;
 import org.springframework.data.neo4j.transaction.Neo4jTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-
-import java.rmi.server.RemoteServer;
 
 @Configuration
 @EnableNeo4jRepositories(basePackages = "com.mes.repository")
@@ -22,7 +19,7 @@ public class Neo4jConfiguration {
     @Bean
     public org.neo4j.ogm.config.Configuration getConfiguration() {
         org.neo4j.ogm.config.Configuration config = new Builder().uri(URL).build();
-           return config;
+        return config;
     }
 
     @Bean

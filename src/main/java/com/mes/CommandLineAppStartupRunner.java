@@ -1,26 +1,31 @@
 package com.mes;
 
-import com.mes.domain.Patient;
+import com.mes.domain.Disease;
+import com.mes.repository.DiseaseRepository;
 import com.mes.repository.PatientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 @Component
 public class CommandLineAppStartupRunner implements CommandLineRunner {
     @Autowired
     PatientRepository patientRepository;
 
+    @Autowired
+    DiseaseRepository diseaseRepository;
+
     @Override
     public void run(String... args) throws Exception {
-        Patient patient = new Patient();
-        patient.setAge(23);
-        patient.setName("Petia Petrov");
+        List<Disease> diseases = new Data().getDiseases();
 
-        patientRepository.save(patient);
+        diseaseRepository.saveAll(diseases);
 
-        Iterable<Patient> all = patientRepository.findAll();
+        Iterable<Disease> all = diseaseRepository.findAll();
         all.forEach(System.out::println);
+
 
     }
 }

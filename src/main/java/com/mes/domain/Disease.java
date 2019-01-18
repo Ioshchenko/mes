@@ -13,7 +13,7 @@ import java.util.List;
 public class Disease {
     @Id
     @GeneratedValue
-    private int id;
+    private Long id;
     private String title;
 
     @Relationship(type = "SICK_WITH", direction = Relationship.INCOMING)

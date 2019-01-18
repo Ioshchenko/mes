@@ -11,8 +11,8 @@ import java.util.List;
 public class Symptom {
     @Id
     @GeneratedValue
-    private int id;
-    private List<String> symptoms;
+    private Long id;
+    private String title;
 
     @StartNode
     private Patient patient;
