@@ -16,6 +16,6 @@ public class Disease {
     private Long id;
     private String title;
 
-    @Relationship(type = "SICK_WITH", direction = Relationship.INCOMING)
+    @Relationship(type = "S_WITH", direction = Relationship.UNDIRECTED)
     private List<Symptom> symptoms;
 }

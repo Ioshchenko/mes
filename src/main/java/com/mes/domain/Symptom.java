@@ -7,15 +7,12 @@ import org.neo4j.ogm.annotation.*;
 import java.util.List;
 
 @Data
-@RelationshipEntity(type = "SICK_WITH")
+@NodeEntity
 public class Symptom {
     @Id
     @GeneratedValue
     private Long id;
     private String title;
-
-    @StartNode
-    private Patient patient;
-    @EndNode
-    private Disease disease;
+    @Relationship(type = "S_WITH")
+    private List<Disease> disease;
 }
